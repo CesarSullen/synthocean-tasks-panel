@@ -1,0 +1,306 @@
+@import "reset";
+
+.panel-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-bottom: $border-general;
+	gap: 1rem;
+
+	.panel-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: $primary-color;
+		font-family: "Exo2";
+
+		span {
+			color: $secondary-color;
+			font-family: "Exo2";
+		}
+	}
+
+	.task-filter {
+		padding: 0.5rem 1rem;
+		border: $border-general;
+		border-radius: $border-radius-general;
+		color: $secondary-color;
+		font-size: 1.1rem;
+		cursor: pointer;
+		width: 100%;
+		max-width: 250px;
+		font-family: "Exo2";
+	}
+
+	@media screen and (min-width: 700px) {
+		padding: 1rem 2rem;
+		flex-direction: row;
+
+		.panel-title {
+			font-size: 1.8rem;
+		}
+
+		.task-filter {
+			width: auto;
+		}
+	}
+}
+
+.kanban-board {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	min-height: calc(100vh - 80px);
+	justify-content: flex-start;
+
+	@media screen and (min-width: 700px) {
+		flex-direction: row;
+		gap: 2rem;
+		padding: 2rem;
+		justify-content: center;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	border-radius: $border-radius-general;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	backdrop-filter: blur(5px);
+
+	.column-header {
+		border-radius: $border-radius-general $border-radius-general 0 0;
+		padding: 0.8rem 2rem;
+		font-weight: 600;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		.column-title {
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0;
+			flex: 1;
+			font-family: "Exo2";
+		}
+
+		.task-count {
+			font-size: 0.9rem;
+			background-color: $light-color;
+			color: $primary-color;
+			padding: 0.3rem 0.65rem;
+			border-radius: $border-radius-rounded;
+		}
+	}
+
+	.column-body {
+		flex: 1;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	@media screen and (min-width: 700px) {
+		flex: 1;
+		min-width: 300px;
+		max-width: 350px;
+	}
+
+	&.pending-column {
+		background: rgba($primary-color, 0.25);
+		border: solid 0.5px rgba($primary-color, 0.2);
+
+		.column-header {
+			background: $primary-color;
+			color: white;
+		}
+
+		.task-assigned-badge {
+			background: rgba($primary-color, 0.2);
+			color: $primary-color;
+
+			&:hover {
+				background: rgba($primary-color, 0.5);
+			}
+		}
+	}
+
+	&.inprogress-column {
+		background: rgba($terciary-color, 0.25);
+		border: solid 0.5px rgba($terciary-color, 0.2);
+
+		.column-header {
+			background: $terciary-color;
+			color: white;
+		}
+
+		.task-assigned-badge {
+			background: rgba($terciary-color, 0.2);
+			color: $terciary-color;
+
+			&:hover {
+				background: rgba($terciary-color, 0.5);
+			}
+		}
+	}
+
+	&.completed-column {
+		background: rgba($secondary-color, 0.25);
+		border: solid 0.5px rgba($secondary-color, 0.2);
+
+		.column-header {
+			background: $secondary-color;
+			color: white;
+		}
+
+		.task-assigned-badge {
+			background: rgba($secondary-color, 0.2);
+			color: $secondary-color;
+
+			&:hover {
+				background: rgba($secondary-color, 0.5);
+			}
+		}
+	}
+}
+
+.task-card {
+	padding: 0.75rem;
+	cursor: grab;
+	border-radius: $border-radius-general;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.info-icon {
+		max-width: 30px;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&.pending {
+		background: rgba($primary-color, 0.3);
+		border: solid 0.5px rgba($primary-color, 0.2);
+	}
+
+	&.inprogress {
+		background: rgba($terciary-color, 0.3);
+		border: solid 0.5px rgba($terciary-color, 0.2);
+	}
+
+	&.completed {
+		background: rgba($secondary-color, 0.3);
+		border: solid 0.5px rgba($secondary-color, 0.2);
+	}
+
+	&:active {
+		cursor: grabbing;
+	}
+
+	.task-priority {
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+		gap: 5px;
+
+		.icon {
+			max-width: 25px;
+		}
+	}
+
+	.task-title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: $secondary-color;
+		font-family: "Exo2";
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.task-assigned-badge {
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		border-radius: $border-radius-rounded;
+		font-size: 0.9rem;
+		font-weight: 600;
+		width: fit-content;
+		letter-spacing: 0.6px;
+	}
+
+	.task-description {
+		line-height: 1.2;
+		color: $secondary-color;
+	}
+
+	.task-actions {
+		width: 100%;
+		display: flex;
+		gap: 0.5rem;
+		justify-content: flex-end;
+		align-items: center;
+
+		.due-date {
+			font-size: 0.85rem;
+			opacity: 0.7;
+			margin-right: auto;
+			color: $secondary-color;
+		}
+
+		button {
+			flex: 1;
+			padding: 0.35rem 0.5rem;
+			border-radius: $border-radius-general;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.25rem;
+			cursor: pointer;
+			border: none;
+			background: rgba($secondary-color, 0.2);
+			color: $secondary-color;
+			position: relative;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: 0.6px;
+
+			.icon {
+				max-width: 20px;
+			}
+
+			&:hover {
+				background: rgba($secondary-color, 0.3);
+			}
+		}
+	}
+
+	.task-move-select {
+		width: 100%;
+		padding: 0.5rem;
+		border: $border-general;
+		border-radius: $border-radius-general;
+		margin-top: 0.5rem;
+		background: transparent;
+		color: $secondary-color;
+		display: block;
+		font-size: 1rem;
+	}
+
+	@media screen and (min-width: 700px) {
+		padding: 1rem;
+
+		.task-move-select {
+			display: none;
+		}
+	}
+}
