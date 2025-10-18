@@ -27,491 +27,119 @@
 
 		<main class="kanban-board">
 			<!-- Pending Column -->
-			<section class="column pending-column" data-status="pending">
+			<section class="column pending-column">
 				<div class="column-header">
 					<h2 class="column-title">PENDING</h2>
-					<div class="task-count" aria-live="polite">3</div>
+					<div class="task-count">1</div>
 				</div>
 				<div class="column-body">
 					<div class="task-card pending">
-						<h3 class="task-title" contenteditable="false">
+						<h3 class="task-title">
 							Review Q4 budget report
 							<img
 								src="./assets/icons/info-duotone.svg"
 								class="info-icon icon"
-								alt="Info"
 							/>
 						</h3>
 						<div class="task-assigned-badge">CEO</div>
 						<div class="task-priority urgent">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
+							<img src="./assets/icons/warning-duotone.svg" class="icon" />
 							Urgent
 						</div>
-						<p class="task-description" contenteditable="false">
+						<p class="task-description">
 							Analyze expenses and forecast revenue for the upcoming quarter.
 						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 15, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 20, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
+						<div class="due-date">Oct 20, 2025</div>
+						<div class="action-row">
+							<select class="action-btn">
+								<option value="pending" selected>Pending</option>
+								<option value="inprogress">In Progress</option>
+								<option value="completed">Completed</option>
+							</select>
+							<button class="action-btn">
+								<img src="./assets/icons/trash-duotone.svg" class="icon" />
 								Delete
 							</button>
 						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card pending">
-						<h3 class="task-title" contenteditable="false">
-							Update client proposal
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">COO</div>
-						<div class="task-priority">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Not Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Incorporate feedback from the last meeting and adjust pricing.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 14, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 22, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card pending">
-						<h3 class="task-title" contenteditable="false">
-							Fix bug in dashboard
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">Developer #1</div>
-						<div class="task-priority urgent">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Resolve the data loading error on the analytics page.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 16, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 19, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
 					</div>
 				</div>
 			</section>
 
 			<!-- In Progress Column -->
-			<section class="column inprogress-column" data-status="inprogress">
+			<section class="column inprogress-column">
 				<div class="column-header">
 					<h2 class="column-title">IN PROGRESS</h2>
-					<span class="task-count" aria-live="polite">2</span>
+					<div class="task-count">1</div>
 				</div>
 				<div class="column-body">
 					<div class="task-card inprogress">
-						<h3 class="task-title" contenteditable="false">
+						<h3 class="task-title">
 							Design new landing page
 							<img
 								src="./assets/icons/info-duotone.svg"
 								class="info-icon icon"
-								alt="Info"
 							/>
 						</h3>
 						<div class="task-assigned-badge">Lead Designer</div>
 						<div class="task-priority">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
+							<img src="./assets/icons/warning-duotone.svg" class="icon" />
 							Not Urgent
 						</div>
-						<p class="task-description" contenteditable="false">
+						<p class="task-description">
 							Create wireframes and high-fidelity mockups for the homepage
 							redesign.
 						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 10, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 18, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
+						<div class="due-date">Oct 18, 2025</div>
+						<div class="action-row">
+							<select class="action-btn">
+								<option value="pending">Pending</option>
+								<option value="inprogress" selected>In Progress</option>
+								<option value="completed">Completed</option>
+							</select>
+							<button class="action-btn">
+								<img src="./assets/icons/trash-duotone.svg" class="icon" />
 								Delete
 							</button>
 						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card inprogress">
-						<h3 class="task-title" contenteditable="false">
-							Write blog post on AI trends
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">Marketing</div>
-						<div class="task-priority urgent">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Research and draft 1500-word article for the company blog.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 13, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 17, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
 					</div>
 				</div>
 			</section>
 
 			<!-- Completed Column -->
-			<section class="column completed-column" data-status="completed">
+			<section class="column completed-column">
 				<div class="column-header">
 					<h2 class="column-title">COMPLETED</h2>
-					<span class="task-count" aria-live="polite">4</span>
+					<div class="task-count">1</div>
 				</div>
 				<div class="column-body">
 					<div class="task-card completed">
-						<h3 class="task-title" contenteditable="false">
+						<h3 class="task-title">
 							Launch email campaign
 							<img
 								src="./assets/icons/info-duotone.svg"
 								class="info-icon icon"
-								alt="Info"
 							/>
 						</h3>
 						<div class="task-assigned-badge">Marketing</div>
 						<div class="task-priority">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
+							<img src="./assets/icons/warning-duotone.svg" class="icon" />
 							Not Urgent
 						</div>
-						<p class="task-description" contenteditable="false">
+						<p class="task-description">
 							Send promotional newsletter to 5k subscribers.
 						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 12, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 15, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
+						<div class="due-date">Oct 15, 2025</div>
+						<div class="action-row">
+							<select class="action-btn">
+								<option value="pending">Pending</option>
+								<option value="inprogress">In Progress</option>
+								<option value="completed" selected>Completed</option>
+							</select>
+							<button class="action-btn">
+								<img src="./assets/icons/trash-duotone.svg" class="icon" />
 								Delete
 							</button>
 						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card completed">
-						<h3 class="task-title" contenteditable="false">
-							Code review pull request
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">Developer #1</div>
-						<div class="task-priority urgent">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Review and merge changes to the authentication module.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 11, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 14, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card completed">
-						<h3 class="task-title" contenteditable="false">
-							Approve vendor contract
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">COO</div>
-						<div class="task-priority">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Not Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Sign off on the new software license agreement.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 9, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 13, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
-					</div>
-					<div class="task-card completed">
-						<h3 class="task-title" contenteditable="false">
-							Finalize project timeline
-							<img
-								src="./assets/icons/info-duotone.svg"
-								class="info-icon icon"
-								alt="Info"
-							/>
-						</h3>
-						<div class="task-assigned-badge">Lead Designer</div>
-						<div class="task-priority urgent">
-							<img
-								src="./assets/icons/warning-duotone.svg"
-								class="icon"
-								alt=""
-								srcset=""
-							/>
-							Urgent
-						</div>
-						<p class="task-description" contenteditable="false">
-							Adjust milestones based on team feedback.
-						</p>
-						<div class="task-dates-line">
-							<span class="assigned-date">Oct 8, 2025</span>
-							<span class="date-arrow">→</span>
-							<span class="due-date">Oct 12, 2025</span>
-						</div>
-						<div class="task-actions">
-							<button class="task-edit-btn" aria-label="Edit task">
-								<img
-									src="./assets/icons/pencil-line-duotone.svg"
-									class="icon"
-									alt="Edit"
-								/>
-								Edit
-							</button>
-							<button class="task-delete-btn" aria-label="Delete task">
-								<img
-									src="./assets/icons/trash-duotone.svg"
-									class="icon"
-									alt="Delete"
-								/>
-								Delete
-							</button>
-						</div>
-						<select class="task-move-select" aria-label="Move task">
-							<option value="pending">Pending</option>
-							<option value="inprogress">In Progress</option>
-							<option value="completed">Completed</option>
-						</select>
 					</div>
 				</div>
 			</section>

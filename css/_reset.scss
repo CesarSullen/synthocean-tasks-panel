@@ -3,13 +3,13 @@
 ===================== */
 $primary-color: #006dff;
 $secondary-color: #002b5b;
-$terciary-color: #004fc1;
+$tertiary-color: #004fc1;
 $light-color: #e0e0e0;
 $border-radius-general: 8px;
 $border-radius-rounded: 35px;
 $border-general: 2px solid $secondary-color;
 
-$pending-color: #e61515;
+$red-color: #e61515;
 
 /* =====================
    TYPOGRAPHY
@@ -28,6 +28,11 @@ $pending-color: #e61515;
 	font-family: "Inter";
 	src: url("../typography/Inter_28pt-Regular.ttf") format("truetype");
 	font-weight: 400;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("../typography/Inter_28pt-Bold.ttf") format("truetype");
+	font-weight: 600;
 }
 
 /* =====================
@@ -88,16 +93,8 @@ svg {
 	text-decoration: underline;
 }
 
-.green-text {
-	color: rgb(22, 148, 22);
-}
-
-.red-text {
-	color: red;
-}
-
 .important-text {
-	color: $terciary-color;
+	color: $tertiary-color;
 }
 
 .hidden {

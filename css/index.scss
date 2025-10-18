@@ -17,7 +17,6 @@
 
 		span {
 			color: $secondary-color;
-			font-family: "Exo2";
 		}
 	}
 
@@ -31,6 +30,8 @@
 		width: 100%;
 		max-width: 250px;
 		font-family: "Exo2";
+		appearance: none;
+		text-align: center;
 	}
 
 	@media screen and (min-width: 700px) {
@@ -88,14 +89,20 @@
 			margin: 0;
 			flex: 1;
 			font-family: "Exo2";
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 		}
 
 		.task-count {
 			font-size: 0.9rem;
 			background-color: $light-color;
 			color: $primary-color;
-			padding: 0.3rem 0.65rem;
-			border-radius: $border-radius-rounded;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 600;
 		}
 	}
 
@@ -115,7 +122,6 @@
 
 	&.pending-column {
 		background: rgba($primary-color, 0.25);
-		border: solid 0.5px rgba($primary-color, 0.2);
 
 		.column-header {
 			background: $primary-color;
@@ -127,33 +133,31 @@
 			color: $primary-color;
 
 			&:hover {
-				background: rgba($primary-color, 0.5);
+				background: rgba($primary-color, 0.35);
 			}
 		}
 	}
 
 	&.inprogress-column {
-		background: rgba($terciary-color, 0.25);
-		border: solid 0.5px rgba($terciary-color, 0.2);
+		background: rgba($tertiary-color, 0.25);
 
 		.column-header {
-			background: $terciary-color;
+			background: $tertiary-color;
 			color: white;
 		}
 
 		.task-assigned-badge {
-			background: rgba($terciary-color, 0.2);
-			color: $terciary-color;
+			background: rgba($tertiary-color, 0.2);
+			color: $tertiary-color;
 
 			&:hover {
-				background: rgba($terciary-color, 0.5);
+				background: rgba($tertiary-color, 0.35);
 			}
 		}
 	}
 
 	&.completed-column {
 		background: rgba($secondary-color, 0.25);
-		border: solid 0.5px rgba($secondary-color, 0.2);
 
 		.column-header {
 			background: $secondary-color;
@@ -165,7 +169,7 @@
 			color: $secondary-color;
 
 			&:hover {
-				background: rgba($secondary-color, 0.5);
+				background: rgba($secondary-color, 0.35);
 			}
 		}
 	}
@@ -179,6 +183,12 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	transition: 0.2s;
+
+	&:hover {
+		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+		transform: translateY(-2px);
+	}
 
 	.info-icon {
 		max-width: 30px;
@@ -190,17 +200,12 @@
 
 	&.pending {
 		background: rgba($primary-color, 0.3);
-		border: solid 0.5px rgba($primary-color, 0.2);
 	}
-
 	&.inprogress {
-		background: rgba($terciary-color, 0.3);
-		border: solid 0.5px rgba($terciary-color, 0.2);
+		background: rgba($tertiary-color, 0.3);
 	}
-
 	&.completed {
 		background: rgba($secondary-color, 0.3);
-		border: solid 0.5px rgba($secondary-color, 0.2);
 	}
 
 	&:active {
@@ -236,6 +241,7 @@
 		font-weight: 600;
 		width: fit-content;
 		letter-spacing: 0.6px;
+		transition: 0.2s;
 	}
 
 	.task-description {
@@ -243,64 +249,53 @@
 		color: $secondary-color;
 	}
 
-	.task-actions {
-		width: 100%;
+	.due-date {
+		font-size: 1rem;
+		font-weight: 600;
+		color: $secondary-color;
+		text-align: left;
+	}
+
+	.action-row {
 		display: flex;
 		gap: 0.5rem;
-		justify-content: flex-end;
-		align-items: center;
-
-		.due-date {
-			font-size: 0.85rem;
-			opacity: 0.7;
-			margin-right: auto;
-			color: $secondary-color;
-		}
-
-		button {
-			flex: 1;
-			padding: 0.35rem 0.5rem;
-			border-radius: $border-radius-general;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 0.25rem;
-			cursor: pointer;
-			border: none;
-			background: rgba($secondary-color, 0.2);
-			color: $secondary-color;
-			position: relative;
-			font-size: 0.9rem;
-			font-weight: 600;
-			letter-spacing: 0.6px;
-
-			.icon {
-				max-width: 20px;
-			}
-
-			&:hover {
-				background: rgba($secondary-color, 0.3);
-			}
-		}
-	}
-
-	.task-move-select {
 		width: 100%;
-		padding: 0.5rem;
-		border: $border-general;
-		border-radius: $border-radius-general;
-		margin-top: 0.5rem;
-		background: transparent;
-		color: $secondary-color;
-		display: block;
-		font-size: 1rem;
 	}
 
-	@media screen and (min-width: 700px) {
-		padding: 1rem;
+	.action-btn {
+		flex: 1;
+		padding: 0.5rem 0.75rem;
+		border-radius: $border-radius-general;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.4rem;
+		cursor: pointer;
+		border: none;
+		background: rgba($secondary-color, 0.2);
+		font-size: 0.9rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.7px;
+		font-family: "Exo2";
+		transition: 0.2s;
 
-		.task-move-select {
-			display: none;
+		img {
+			max-width: 20px;
 		}
+
+		&:hover {
+			transform: scale(0.98);
+		}
+	}
+
+	select.action-btn {
+		appearance: none;
+		text-align: center;
+		color: $secondary-color;
+	}
+
+	button.action-btn {
+		color: $red-color;
 	}
 }
