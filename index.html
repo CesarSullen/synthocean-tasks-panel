@@ -19,7 +19,7 @@
 	<body id="body">
 		<header class="panel-header">
 			<h1 class="panel-title">SynthOcean <span>Tasks Panel</span></h1>
-			<select class="task-filter" aria-label="Filter tasks">
+			<select class="task-filter">
 				<option value="all">All Tasks</option>
 				<option value="mine">My Tasks</option>
 			</select>
@@ -35,17 +35,20 @@
 				<div class="column-body">
 					<div class="task-card pending">
 						<h3 class="task-title">Review Q4 budget report</h3>
-						<div class="task-assigned-badge">CEO</div>
+						<div class="task-assigned-to">To: CEO</div>
 						<p class="task-description">
 							Analyze expenses and forecast revenue for the upcoming quarter.
 						</p>
 						<div class="due-date">Deliver before: Oct 20, 2025</div>
 						<div class="action-row">
-							<select class="action-btn">
-								<option value="pending" selected>Pending</option>
-								<option value="inprogress">In Progress</option>
-								<option value="completed">Completed</option>
-							</select>
+							<div class="custom-select action-btn">
+								<div class="selected">Pending</div>
+								<ul class="options">
+									<li data-value="pending">Pending</li>
+									<li data-value="inprogress">In Progress</li>
+									<li data-value="completed">Completed</li>
+								</ul>
+							</div>
 							<button class="action-btn">Delete</button>
 						</div>
 					</div>
@@ -61,18 +64,21 @@
 				<div class="column-body">
 					<div class="task-card inprogress">
 						<h3 class="task-title">Design new landing page</h3>
-						<div class="task-assigned-badge">Lead Designer</div>
+						<div class="task-assigned-to">To: Lead Designer</div>
 						<p class="task-description">
 							Create wireframes and high-fidelity mockups for the homepage
 							redesign.
 						</p>
 						<div class="due-date">Deliver before: Oct 18, 2025</div>
 						<div class="action-row">
-							<select class="action-btn">
-								<option value="pending">Pending</option>
-								<option value="inprogress" selected>In Progress</option>
-								<option value="completed">Completed</option>
-							</select>
+							<div class="custom-select action-btn">
+								<div class="selected">In Progress</div>
+								<ul class="options">
+									<li data-value="pending">Pending</li>
+									<li data-value="inprogress">In Progress</li>
+									<li data-value="completed">Completed</li>
+								</ul>
+							</div>
 							<button class="action-btn">Delete</button>
 						</div>
 					</div>
@@ -88,17 +94,21 @@
 				<div class="column-body">
 					<div class="task-card completed">
 						<h3 class="task-title">Launch email campaign</h3>
-						<div class="task-assigned-badge">Marketing</div>
+						<div class="task-assigned-to">To: Marketing</div>
 						<p class="task-description">
 							Send promotional newsletter to 5k subscribers.
 						</p>
 						<div class="due-date">Deliver before: Oct 15, 2025</div>
 						<div class="action-row">
-							<select class="action-btn">
-								<option value="pending">Pending</option>
-								<option value="inprogress">In Progress</option>
-								<option value="completed" selected>Completed</option>
-							</select>
+							<div class="custom-select action-btn">
+								<div class="selected">Completed</div>
+								<ul class="options">
+									<li data-value="pending">Pending</li>
+									<li data-value="inprogress">In Progress</li>
+									<li data-value="completed">Completed</li>
+								</ul>
+							</div>
+
 							<button class="action-btn">Delete</button>
 						</div>
 					</div>

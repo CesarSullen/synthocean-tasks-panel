@@ -124,14 +124,6 @@
 		.column-header {
 			background: $primary-color;
 		}
-
-		.task-assigned-badge {
-			background: rgba($primary-color, 0.4);
-
-			&:hover {
-				background: rgba($primary-color, 0.6);
-			}
-		}
 	}
 
 	&.inprogress-column {
@@ -140,14 +132,6 @@
 		.column-header {
 			background: $tertiary-color;
 		}
-
-		.task-assigned-badge {
-			background: rgba($tertiary-color, 0.4);
-
-			&:hover {
-				background: rgba($tertiary-color, 0.6);
-			}
-		}
 	}
 
 	&.completed-column {
@@ -155,14 +139,6 @@
 
 		.column-header {
 			background: $secondary-color;
-		}
-
-		.task-assigned-badge {
-			background: rgba($secondary-color, 0.4);
-
-			&:hover {
-				background: rgba($secondary-color, 0.6);
-			}
 		}
 	}
 }
@@ -177,10 +153,10 @@
 	gap: 0.8rem;
 	background: url(../assets/background.png);
 	transition: 0.2s;
+	user-select: none;
 
 	&:hover {
 		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-		transform: translateY(-2px);
 	}
 
 	@media screen and (min-width: 700px) {
@@ -200,15 +176,10 @@
 		align-items: center;
 	}
 
-	.task-assigned-badge {
-		display: inline-block;
-		padding: 0.25rem 0.5rem;
-		border-radius: $border-radius-rounded;
+	.task-assigned-to {
 		font-size: 0.9rem;
-		font-weight: 600;
-		width: fit-content;
-		letter-spacing: 0.6px;
-		transition: 0.2s;
+		color: $secondary-color;
+		text-transform: none;
 	}
 
 	.task-description {
@@ -227,21 +198,31 @@
 		display: flex;
 		gap: 0.5rem;
 		width: 100%;
+		align-items: stretch;
 	}
+}
 
-	.action-btn {
-		flex: 1;
+.custom-select {
+	position: relative;
+	flex: 1;
+	user-select: none;
+	text-wrap: nowrap;
+
+	.selected {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		padding: 0.5rem 0.75rem;
 		border-radius: $border-radius-general;
-		gap: 0.4rem;
-		cursor: pointer;
-		border: none;
+		background: rgba($primary-color, 0.2);
+		color: $secondary-color;
 		font-size: 0.9rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.7px;
 		font-family: "Exo2";
-		transition: 0.2s;
+		cursor: pointer;
+		transition: 0.2s ease;
 		text-align: center;
 
 		&:hover {
@@ -249,14 +230,54 @@
 		}
 	}
 
-	select.action-btn {
-		appearance: none;
-		color: $secondary-color;
-		background: rgba($primary-color, 0.2);
+	.options {
+		display: none;
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		width: 100%;
+		background: $light-color;
+		border-radius: $border-radius-general;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		overflow: hidden;
+
+		li {
+			padding: 0.5rem;
+			cursor: pointer;
+			color: $secondary-color;
+			font-size: 0.9rem;
+			font-weight: 600;
+			text-align: center;
+			transition: 0.2s;
+
+			&:hover {
+				background: rgba($light-color, 0.2);
+			}
+		}
 	}
 
-	button.action-btn {
-		color: $red-color;
-		background: rgba($red-color, 0.2);
+	&.open .options {
+		display: block;
+	}
+}
+
+button.action-btn {
+	flex: 1;
+	padding: 0.5rem 0.75rem;
+	border-radius: $border-radius-general;
+	cursor: pointer;
+	border: none;
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.7px;
+	font-family: "Exo2";
+	transition: 0.2s;
+	color: $red-color;
+	background: rgba($red-color, 0.2);
+
+	&:hover {
+		transform: scale(0.98);
 	}
 }
